@@ -11,7 +11,7 @@ public class Conjured implements UpdateableQuality {
     }
 
     @Override
-    public Item update(Item item) {
+    public Item update() {
         return null;
     }
 }

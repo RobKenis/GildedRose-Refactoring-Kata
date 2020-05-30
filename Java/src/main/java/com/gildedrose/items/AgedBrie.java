@@ -11,7 +11,8 @@ public class AgedBrie implements UpdateableQuality {
     }
 
     @Override
-    public Item update(Item item) {
-        return null;
+    public Item update() {
+        int quality = item.quality == 50 ? 50 : item.quality +1;
+        return new Item(item.name, item.sellIn -1, quality);
     }
 }
