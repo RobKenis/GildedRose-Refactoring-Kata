@@ -1,18 +1,20 @@
 package com.gildedrose;
 
+import com.gildedrose.items.ItemFactory;
+import com.gildedrose.items.UpdateableQuality;
+
 class GildedRose {
     //ALSO DO NOT TOUCH THIS.
     Item[] items;
-    private final QualityUpdater qualityUpdater;
 
     public GildedRose(Item[] items) {
-        qualityUpdater = new SimpleQualityUpdater();
         this.items = items;
     }
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++){
-            items[i] = qualityUpdater.update(items[i]);
+            final UpdateableQuality item = ItemFactory.of(items[i]);
+            items[i] = item.update();
         }
     }
 }
