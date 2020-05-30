@@ -12,6 +12,11 @@ public class GenericItem implements UpdateableQuality {
 
     @Override
     public Item update() {
-        return null;
+        if (item.sellIn <= 0){
+            int quality = item.quality <= 1 ? 0 : item.quality - 2;
+            return new Item(item.name, item.sellIn -1, quality);
+        }
+        int quality = item.quality == 0 ? 0 : item.quality - 1;
+        return new Item(item.name, item.sellIn -1, quality);
     }
 }
