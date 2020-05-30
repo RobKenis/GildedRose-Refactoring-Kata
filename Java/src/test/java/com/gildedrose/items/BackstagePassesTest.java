@@ -32,11 +32,27 @@ class BackstagePassesTest {
     }
 
     @Test
+    void lessThan10DaysNeverMoreThan50() {
+        final BackstagePasses pass = new BackstagePasses(new Item("Backstage passes for Rob", 9, 49));
+        final Item item = pass.update();
+        assertEquals(8, item.sellIn);
+        assertEquals(50, item.quality);
+    }
+
+    @Test
     void lessThan5Days() {
         final BackstagePasses pass = new BackstagePasses(new Item("Backstage passes for Rob", 3, 10));
         final Item item = pass.update();
         assertEquals(2, item.sellIn);
         assertEquals(13, item.quality);
+    }
+
+    @Test
+    void lessThan5DaysNeverMoreThan50() {
+        final BackstagePasses pass = new BackstagePasses(new Item("Backstage passes for Rob", 3, 47));
+        final Item item = pass.update();
+        assertEquals(2, item.sellIn);
+        assertEquals(50, item.quality);
     }
 
     @Test

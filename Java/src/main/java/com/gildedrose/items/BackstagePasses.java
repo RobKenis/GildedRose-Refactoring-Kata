@@ -17,12 +17,12 @@ public class BackstagePasses implements UpdateableQuality {
             return new Item(item.name, item.sellIn - 1, 0);
         }
         if (item.sellIn <= 5) {
-            int quality = item.quality == 50 ? 50 : item.quality + 3;
+            int quality = item.quality >= 47 ? 50 : item.quality + 3;
             return new Item(item.name, item.sellIn - 1, quality);
 
         }
         if (item.sellIn <= 10) {
-            int quality = item.quality == 50 ? 50 : item.quality + 2;
+            int quality = item.quality >= 48 ? 50 : item.quality + 2;
             return new Item(item.name, item.sellIn - 1, quality);
         }
         int quality = item.quality == 50 ? 50 : item.quality + 1;
