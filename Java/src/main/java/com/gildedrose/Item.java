@@ -1,5 +1,6 @@
 package com.gildedrose;
 
+// DO NOT TOUCH THIS CLASS. IT IS AGAINST THE RULES.
 public class Item {
 
     public String name;

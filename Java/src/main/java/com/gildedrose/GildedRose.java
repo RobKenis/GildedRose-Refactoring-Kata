@@ -1,6 +1,7 @@
 package com.gildedrose;
 
 class GildedRose {
+    //ALSO DO NOT TOUCH THIS.
     Item[] items;
 
     public GildedRose(Item[] items) {
