@@ -1,7 +1,6 @@
 package com.gildedrose;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -26,15 +25,6 @@ class GildedRoseTest {
     }
 
     @Test
-    @Disabled("This test is stupid")
-    void foo() {
-        Item[] items = new Item[]{new Item("foo", 0, 0)};
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-        assertEquals("foo", app.items[0].name);
-    }
-
-    @Test
     void superGenericTestForAllItems() {
         final GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -46,6 +36,7 @@ class GildedRoseTest {
         verifyItem(items[5], "Backstage passes to a TAFKAL80ETC concert", 14, 21);
         verifyItem(items[6], "Backstage passes to a TAFKAL80ETC concert", 9, 50);
         verifyItem(items[7], "Backstage passes to a TAFKAL80ETC concert", 4, 50);
+        verifyItem(items[8], "Conjured Mana Cake", 2, 4);
     }
 
     @Test
@@ -87,7 +78,6 @@ class GildedRoseTest {
     }
 
     @Test
-    @Disabled("Worry about this one later.")
     void conjuredManaCake() {
         final GildedRose app = new GildedRose(items);
         app.updateQuality();

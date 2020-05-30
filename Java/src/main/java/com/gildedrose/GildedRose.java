@@ -1,7 +1,5 @@
 package com.gildedrose;
 
-import java.util.Arrays;
-
 class GildedRose {
     //ALSO DO NOT TOUCH THIS.
     Item[] items;
