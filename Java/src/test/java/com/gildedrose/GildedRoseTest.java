@@ -49,6 +49,44 @@ class GildedRoseTest {
     }
 
     @Test
+    void desterityVest() {
+        final GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        verifyItem(items[0], "+5 Dexterity Vest", 9, 19);
+    }
+
+    @Test
+    void agedBrie() {
+        final GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        verifyItem(items[1], "Aged Brie", 1, 1);
+    }
+
+    @Test
+    void elixerOfTheMongoose() {
+        final GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        verifyItem(items[2], "Elixir of the Mongoose", 4, 6);
+    }
+
+    @Test
+    void sulfurasHandOfRagnaros() {
+        final GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        verifyItem(items[3], "Sulfuras, Hand of Ragnaros", 0, 80);
+        verifyItem(items[4], "Sulfuras, Hand of Ragnaros", -1, 80);
+    }
+
+    @Test
+    void backstagePasses() {
+        final GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        verifyItem(items[5], "Backstage passes to a TAFKAL80ETC concert", 14, 21);
+        verifyItem(items[6], "Backstage passes to a TAFKAL80ETC concert", 9, 50);
+        verifyItem(items[7], "Backstage passes to a TAFKAL80ETC concert", 4, 50);
+    }
+
+    @Test
     @Disabled("Worry about this one later.")
     void conjuredManaCake() {
         final GildedRose app = new GildedRose(items);
